@@ -51,8 +51,9 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   background-color: var(--chicago-blue);
-  padding: 1rem 2rem;
+  padding: 1rem 1.25rem;
 }
 
 .nav-logo {
@@ -68,12 +69,40 @@ h3 {
   color: var(--chicago-blue-dark);
 }
 
-.nav-links {
+/* Hamburger widget (mobile). Hidden checkbox toggles the menu, no JS needed. */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
   display: flex;
-  gap: 1.5rem;
-  list-style: none;
-  margin: 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.nav-toggle-label span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background-color: var(--white);
+  border-radius: 2px;
+}
+
+/* Mobile-first: menu is a stacked column, hidden until the widget is tapped */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  margin: 1rem 0 0;
   padding: 0;
+  list-style: none;
+}
+
+.nav-toggle:checked ~ .nav-links {
+  display: flex;
 }
 
 .nav-links li {
@@ -133,7 +162,7 @@ h3 {
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 2.25rem;
   margin: 0 0 1rem;
 }
 
@@ -187,21 +216,18 @@ h3 {
   gap: 2rem;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.25rem;
 }
 
+/* Mobile-first: each row stacks (image on top, text below).
+   Side-by-side and alternation kick in at the desktop breakpoint. */
 .feature,
 .attraction-row,
 .food-row {
   display: flex;
-  gap: 2rem;
+  flex-direction: column;
+  gap: 1.5rem;
   align-items: stretch;
-}
-
-.feature--reverse,
-.attraction-row--reverse,
-.food-row--reverse {
-  flex-direction: row-reverse;
 }
 
 /* Each half of a row takes equal width */
@@ -366,4 +392,59 @@ h3 {
 
 .footer-links a:hover {
   color: var(--chicago-blue-dark);
+}
+
+/* ==========================================================================
+   Responsive breakpoints (mobile-first)
+   Base styles above target Mobile (min-width: 320px).
+   ========================================================================== */
+
+/* Tablet — show the full horizontal nav, hide the hamburger widget */
+@media (min-width: 768px) {
+  .navbar {
+    flex-wrap: nowrap;
+    padding: 1rem 2rem;
+  }
+
+  .nav-toggle-label {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    margin: 0;
+    gap: 1.5rem;
+  }
+
+  .highlights,
+  .attractions,
+  .food-guide {
+    padding: 2rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+/* Desktop — card rows go side by side and alternate sides */
+@media (min-width: 1024px) {
+  .feature,
+  .attraction-row,
+  .food-row {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .feature--reverse,
+  .attraction-row--reverse,
+  .food-row--reverse {
+    flex-direction: row-reverse;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+  }
 }
