@@ -1,0 +1,369 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;700&display=swap");
+
+/* ==========================================================================
+   Globetrotter — Chicago Travel Guide
+   Color palette inspired by the Chicago flag:
+   light blue stripes, white field, and red six-pointed stars.
+   ========================================================================== */
+
+:root {
+  /* Chicago flag colors */
+  --chicago-blue: #41b6e6; /* flag light blue — primary brand color */
+  --chicago-blue-dark: #0b5d85; /* deeper blue — hover/accent shade */
+  --chicago-red: #ff0000;  /* flag star red — bold accent */
+  --white: #ffffff;        /* flag white field — backgrounds */
+
+  /* Supporting neutrals */
+  --ink: #1a1a1a;          /* dark text for readability */
+  --light-blue-tint: #eaf7fd; /* soft blue for section backgrounds */
+  --gray: #5a5a5a;         /* muted text / captions */
+
+  /* Typography — Archivo for headings (bold, urban), Inter for body (clean) */
+  --font-heading: "Archivo", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background-color: var(--white);
+  /* Repeating six-pointed Chicago-flag star pattern (subtle) */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Ctext x='45' y='62' font-family='sans-serif' font-size='44' text-anchor='middle' fill='%2341b6e6' fill-opacity='0.12'%3E%E2%9C%B6%3C/text%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+}
+
+/* ==========================================================================
+   Navigation bar — logo on the left, links pushed to the right
+   ========================================================================== */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--chicago-blue);
+  padding: 1rem 2rem;
+}
+
+.nav-logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-logo:hover {
+  color: var(--chicago-blue-dark);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li::before {
+  content: "\2736"; /* six-pointed star — Chicago flag motif */
+  color: var(--chicago-red);
+  margin-right: 0.5rem;
+}
+
+.nav-links a {
+  color: var(--white);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--chicago-blue-dark);
+}
+
+/* ==========================================================================
+   Hero header — large, centered, text overlaid on the image
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: relative;
+  max-width: 800px;
+  margin: 1.5rem;
+  padding: 2.5rem;
+  color: var(--white);
+  background-color: rgba(11, 93, 133, 0.5);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  margin: 0 0 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin: 0 0 1.75rem;
+}
+
+.hero-button {
+  display: inline-block;
+  background-color: var(--chicago-red);
+  color: var(--white);
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.hero-button:hover {
+  background-color: var(--chicago-blue-dark);
+}
+
+/* ==========================================================================
+   Page headers (section titles)
+   ========================================================================== */
+
+.page-header {
+  text-align: center;
+  padding: 2.5rem 1rem 1rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  color: var(--chicago-blue-dark);
+}
+
+/* ==========================================================================
+   Cards — shared styling across Home, Attractions, and Food pages
+   White "flag field" cards, rounded corners, soft shadow, blue accent.
+   ========================================================================== */
+
+/* Row wrappers: stack each row, alternation handled by --reverse modifiers */
+.highlights,
+.attractions,
+.food-guide {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.feature,
+.attraction-row,
+.food-row {
+  display: flex;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.feature--reverse,
+.attraction-row--reverse,
+.food-row--reverse {
+  flex-direction: row-reverse;
+}
+
+/* Each half of a row takes equal width */
+.feature-media,
+.feature-text,
+.card {
+  flex: 1;
+  margin: 0;
+}
+
+/* The card surface */
+.feature-text,
+.card {
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* Media (image) cards: square image fills the card */
+.feature-media img,
+.card-media img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.feature-media {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Titles inside media cards (Attractions h2, Food linked title) */
+.card-media h2,
+.card-title {
+  margin: 0;
+  padding: 1rem 1.25rem 0;
+  font-size: 1.3rem;
+}
+
+/* Food card: linked title + address */
+.card-title a {
+  color: var(--chicago-blue-dark);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.card-title a:hover {
+  color: var(--chicago-red);
+}
+
+.card-address {
+  display: block;
+  padding: 0.5rem 1.25rem 1.25rem;
+  color: var(--gray);
+  font-style: normal;
+  font-size: 0.9rem;
+}
+
+/* Text cards / feature text blocks */
+.feature-text,
+.card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  border-top: 4px solid var(--chicago-blue);
+}
+
+.feature-text h2 {
+  margin-top: 0;
+  color: var(--chicago-blue-dark);
+}
+
+.feature-text p,
+.card-text p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Gallery cards (Photo Gallery grid)
+   ========================================================================== */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.gallery-card {
+  margin: 0;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.gallery-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-card figcaption {
+  padding: 1rem 1.25rem;
+  color: var(--gray);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  border-top: 4px solid var(--chicago-blue);
+}
+
+/* ==========================================================================
+   Footer — flag blue bar, centered, with six-pointed star bullets
+   (Chicago flag colors + stars as bullets, per decisions.md)
+   ========================================================================== */
+
+.footer {
+  background-color: var(--chicago-blue);
+  color: var(--white);
+  text-align: center;
+  padding: 2.5rem 1rem;
+  margin-top: 3rem;
+}
+
+.footer p {
+  margin: 0 0 1.25rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li {
+  display: flex;
+  align-items: center;
+}
+
+.footer-links li::before {
+  content: "\2736"; /* six-pointed star — Chicago flag motif */
+  color: var(--chicago-red);
+  margin-right: 0.5rem;
+}
+
+.footer-links a {
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--chicago-blue-dark);
+}
