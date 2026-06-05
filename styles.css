@@ -121,8 +121,8 @@ h3 {
   border-radius: 12px;
 }
 
-/* Sign-in form (no functionality — visual only) */
-.signin {
+/* Newsletter form (no functionality — visual only) */
+.newsletter {
   flex: 1;
   min-width: 280px;
   display: flex;
@@ -135,12 +135,12 @@ h3 {
   border-top: 4px solid var(--chicago-blue);
 }
 
-.signin label {
+.newsletter label {
   font-weight: 500;
   font-size: 0.9rem;
 }
 
-.signin input {
+.newsletter input {
   padding: 0.6rem 0.75rem;
   border: 1px solid #cccccc;
   border-radius: 8px;
@@ -148,20 +148,20 @@ h3 {
   font-size: 1rem;
 }
 
-.signin button {
+.newsletter button {
   margin-top: 0.5rem;
   border: none;
   cursor: pointer;
 }
 
-.signin-note {
+.newsletter-note {
   margin: 0;
   text-align: center;
   font-size: 0.85rem;
   color: var(--gray);
 }
 
-.signin-note a {
+.newsletter-note a {
   color: var(--chicago-blue-dark);
 }
 
