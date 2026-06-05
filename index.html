@@ -95,17 +95,39 @@
       </article>
     </section>
 
-    <section class="song" aria-label="Chicago anthem">
-      <h2>A Chicago Classic</h2>
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/c_-cUdmdWgU"
-        title="Chicago - Sufjan Stevens"
-        frameborder="0"
-        allow="accelerated-encoding; clipboard-write; encrypted-media; picture-in-picture"
-        allowfullscreen
-      ></iframe>
+    <section class="song" aria-label="Chicago anthem and sign in">
+      <div class="song-player">
+        <h2>A Chicago Classic</h2>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/c_-cUdmdWgU"
+          title="Chicago - Sufjan Stevens"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <form class="signin" aria-label="Sign in">
+        <h2>Sign In</h2>
+        <label for="signin-email">Email</label>
+        <input
+          type="email"
+          id="signin-email"
+          name="email"
+          placeholder="you@example.com"
+        />
+        <label for="signin-password">Password</label>
+        <input
+          type="password"
+          id="signin-password"
+          name="password"
+          placeholder="Enter your password"
+        />
+        <button type="button" class="hero-button">Sign In</button>
+        <p class="signin-note">New here? <a href="#">Create an account</a></p>
+      </form>
     </section>
 
     <!-- Footer -->
