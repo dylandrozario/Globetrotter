@@ -38,7 +38,18 @@ One layout challenge that required adjusting your HTML structure, and why.
 To overlay text on the hero image, I had to wrap the heading, subtitle, and button in a separate .hero-overlay div inside the <header>, because Flexbox/positioning needs a dedicated container to center the text on top of the image rather than letting it stack below.
 
 ## Milestone 4: Responsive Design
-_Add entries after implementing media queries._
 
+What breakpoints did you end up using, and why those values?
+
+I ended up using Tablet: min-width: 768px
+Desktop: min-width: 1024px
+As I decided to do a mobile first design and these were the common devices that would be seeing my website and I want to accomondate for them.
+
+One section where the mobile layout needed to feel genuinely different, and what you did.
+
+The hardest part was rewriting some of my styling as I decided to do a mobile first design so I had to refer back to my wireframes and see my current implementation to see if the wireframes still had good design and implement changes.
+
+One Claude suggestion about breakpoints you accepted or rejected, and wh
+I accepted the suggestion about rewriting my css to be mobile first and the reason was that over 50% of web traffic is based on mobile devices and Danny suggested using htis approach too and I wanted to test it out.
 ## Stretch Features
 _Add entries if you implement any stretch features.

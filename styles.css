@@ -90,6 +90,23 @@ h3 {
   border-radius: 2px;
 }
 
+.song {
+    text-align: center;
+    padding: 2rem 1.25rem;
+  }
+  
+  .song h2 {
+    color: var(--chicago-blue-dark);
+  }
+  
+  .song iframe {
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border-radius: 12px;
+  }
+
 /* Mobile-first: menu is a stacked column, hidden until the widget is tapped */
 .nav-links {
   display: none;

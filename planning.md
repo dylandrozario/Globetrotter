@@ -28,3 +28,19 @@ On a smaller screen the content should be stacked for the two card rows pages an
 Is there anything about the spacing, alignment, or sizing that's important to the design?
 
 There should be white space to the left and right and the alignment should be that there is equal spacing from elmenets away from one another. The sizing should follow the styles.css and planning.md documentation. 
+
+What are the three device sizes you're designing for, and what width defines each breakpoint?
+
+Mobile: min-width: 320px
+Tablet: min-width: 768px
+Desktop: min-width: 1024px
+
+For each major section of your site, what needs to change at each breakpoint? (e.g., a three-column layout becoming a single column)
+
+The navigation bar turns to a widget
+The cards section of the cards for homepage, Top Attractions, Food Guide it should be stacked and may be decreased in size for readability and clean design
+
+
+Are there any sections where the mobile experience should feel meaningfully different from desktop, not just smaller?
+
+The meaningful difference should be the widget for the nav bar on mobile
