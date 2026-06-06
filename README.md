@@ -73,9 +73,9 @@ Deployed Application (optional): [Globetrotter Deployed Site](https://dylandroza
   - [ X] Create a form to allow users to sign up for a travel newsletter, enhancing user engagement.
   - [ X] *Note*: You do not have to collect and save the data submitted using the form. 
 
-- [] **Deployment**
+- [X] **Deployment**
   - [X] Deploy your website so it's accessible to the public outside of your local machine. 
-  - [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** For ease of grading, please film yourself using your deployed URL with the URL visible in your video. 
+  - [X ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** For ease of grading, please film yourself using your deployed URL with the URL visible in your video. 
 
 - [X] **Custom Styling**: Add a personal touch to your site's design.
   - [X] Integrate at least one custom font using Google Fonts to add personality to your site.
@@ -83,9 +83,7 @@ Deployed Application (optional): [Globetrotter Deployed Site](https://dylandroza
 
 ### Walkthrough Video
 
-`TODO://` Paste the **shareable link** to your animated app walkthrough below (replace `ADD_LOOM_LINK_HERE`). GitHub markdown won't render an embedded Loom player, so a plain link is what graders will use. Make sure the link is public and playable before submitting. (🚫 Remove this paragraph after adding your walkthrough link.)
-
-**Walkthrough video:** [Globetrotter Walkthrough](ADD_LOOM_LINK_HERE)
+**Walkthrough video:** [Globetrotter Walkthrough](https://www.loom.com/share/e1940f83cf14444c8e7fe30327cafd01)
 
 ### Reflection
 
